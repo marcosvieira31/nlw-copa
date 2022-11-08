@@ -1,0 +1,148 @@
+
+
+<main id="cards">
+        <div class="card">
+          <h2>20/11 <span>domingo</span></h2>
+          <ul>
+            <li>
+              <img src="./assets/icon-qatar.svg" alt="Bandeira do Catar" />
+              <strong>13:00</strong>
+              <img src="./assets/icon-ecuador.svg" alt="Bandeira do Equador" />
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>21/11 <span>segunda</span></h2>
+          <ul>
+            <li>
+              <img
+                src="./assets/icon-england.svg"
+                alt="Bandeira da Inglaterra"
+              />
+              <strong>10:00</strong>
+              <img src="./assets/icon-iran.svg" alt="Bandeira do Irã" />
+            </li>
+            <li>
+              <img src="./assets/icon-senegal.svg" alt="Bandeira do Senegal" />
+              <strong>13:00</strong>
+              <img
+                src="./assets/icon-netherlands.svg"
+                alt="Bandeira da Holanda"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/icon-usa.svg"
+                alt="Bandeira dos Estados Unidos da América"
+              />
+              <strong>16:00</strong>
+              <img
+                src="./assets/icon-wales.svg"
+                alt="Bandeira do País de Gales"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>22/11 <span>terça</span></h2>
+          <ul>
+            <li>
+              <img
+                src="./assets/icon-argentina.svg"
+                alt="Bandeira da Argentina"
+              />
+              <strong>07:00</strong>
+              <img src="./assets/icon-saudi-arabia.svg" alt="Bandeira do Arábia Saudita" />
+            </li>
+            <li>
+              <img
+                src="./assets/icon-denmark.svg"
+                alt="Bandeira da Dinamarca"
+              />
+              <strong>10:00</strong>
+              <img src="./assets/icon-tunisia.svg" alt="Bandeira da Arábia Saudita" />
+            </li>
+            <li>
+              <img src="./assets/icon-mexico.svg" alt="Bandeira do México" />
+              <strong>13:00</strong>
+              <img
+                src="./assets/icon-poland.svg"
+                alt="Bandeira da Polônia"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/icon-france.svg"
+                alt="Bandeira da França"
+              />
+              <strong>16:00</strong>
+              <img
+                src="./assets/icon-australia.svg"
+                alt="Bandeira da Austrália"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>24/11 <span>quinta</span></h2>
+          <ul>
+            <li>
+              <img
+                src="./assets/icon-switzerland.svg"
+                alt="Bandeira da Suiça"
+              />
+              <strong>07:00</strong>
+              <img
+                src="./assets/icon-cameroon.svg"
+                alt="Bandeira de Camarões"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/icon-portugal.svg"
+                alt="Bandeira de Portugal"
+              />
+              <strong>13:00</strong>
+              <img src="./assets/icon-ghana.svg" alt="Bandeira de Gana" />
+            </li>
+            <li>
+              <img src="./assets/icon-brazil.svg" alt="Bandeira do Brasil" />
+              <strong>16:00</strong>
+              <img src="./assets/icon-serbia.svg" alt="Bandeira da Sérvia" />
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>24/11 <span>quinta</span></h2>
+          <ul>
+            <li>
+              <img
+                src="./assets/icon-switzerland.svg"
+                alt="Bandeira da Suiça"
+              />
+              <strong>07:00</strong>
+              <img
+                src="./assets/icon-cameroon.svg"
+                alt="Bandeira de Camarões"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/icon-portugal.svg"
+                alt="Bandeira de Portugal"
+              />
+              <strong>13:00</strong>
+              <img src="./assets/icon-ghana.svg" alt="Bandeira de Gana" />
+            </li>
+            <li>
+              <img src="./assets/icon-brazil.svg" alt="Bandeira do Brasil" />
+              <strong>16:00</strong>
+              <img src="./assets/icon-serbia.svg" alt="Bandeira da Sérvia" />
+            </li>
+          </ul>
+        </div>
+      </main>
