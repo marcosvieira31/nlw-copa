@@ -7,6 +7,7 @@
 :root {
   --card-title-border-color: #746615;
   --card-color-primary: #f7dd43;
+  --card-color-secondary: #338af3;
   --white-primary: #e1e1e6;
 }
 
@@ -35,12 +36,17 @@ header {
   margin-bottom: 20px;
 }
 
+#sb-button {
+  visibility: hidden;
+}
+
 nav {
   margin-bottom: 85px;
 }
 
 nav ul {
   display: flex;
+  justify-content: center;
   gap: 35px;
 }
 
@@ -69,27 +75,34 @@ nav ul li:hover {
 
 #cards {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin: 0 auto;
+  justify-content: center;
+  max-width: 1080px;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card {
   padding: 27px 23px 32px 23px;
   text-align: center;
   background: #1d1c19;
-  border-block: 2px solid var(--card-color-primary);
+  border-top: 2px solid var(--card-color-primary);
+  border-bottom: 2px solid var(--card-color-secondary);
   border-radius: 6px;
 }
 
-.card h2 {
-  padding: 8px 16px;
-  border: 2px solid var(--card-color-primary);
-  border-radius: 6px 6px 0 0;
+section {
+  margin-right: 32px;
+  margin-bottom: 32px;
+}
+section:nth-of-type(3n) {
+  margin-right: 0;
+}
 
-  position: absolute;
-  top: -50px;
-  left: 75px;
+section h2 {
+  padding: 8px 16px;
+  border-top: 2px solid var(--card-color-primary);
+  border-inline: 2px solid var(--card-color-primary);
+  border-radius: 6px 6px 0 0;
 
   display: flex;
   width: fit-content;
@@ -99,9 +112,16 @@ nav ul li:hover {
   align-items: center;
 
   color: var(--card-color-primary);
+
+  transition: 0.3s;
 }
 
-.card h2 span {
+section h2:hover {
+  transform: scale(1.1) translateY(-2px);
+  cursor: pointer;
+}
+
+section h2 span {
   color: var(--white-primary);
   font-size: 14px;
   text-transform: uppercase;
@@ -149,10 +169,37 @@ nav ul li:hover {
   }
 }
 
-@media (min-width: 700px) {
-  #cards {
-    max-width: 670px;
-    flex-direction: row;
-    flex-wrap: wrap;
+@keyframes close-card {
+  from {
+    opacity: 1;
+    height: fit-content;
   }
+  to {
+    opacity: 0;
+    height: 10px;
+  }
+}
+
+@media (max-width: 770px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  #cards {
+    justify-content: center;
+    max-width: 480px;
+  }
+  #sb-button {
+    visibility: visible;
+    margin: 0 60px;
+  }
+  #menu-principal {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
 }

@@ -14,22 +14,33 @@
       rel="stylesheet"
     />
 
+    <script
+      src="https://kit.fontawesome.com/4ffec31fd0.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Calendário de Jogos - NLW Copa</title>
   </head>
   <body>
     <div id="app">
       <header>
         <img src="./assets/logo.svg" alt="nlw copa calendário" />
+        <a href=""
+          ><span id="sb-button" style="color: #e1e1e6"
+            ><i class="fa-solid fa-bars fa-2xl"></i></span
+        ></a>
+        <nav id="side-bar" hidden></nav>
       </header>
 
-      <nav>
+      <nav id="menu-principal">
         <ul>
-          <li><a href="#">calendário</a></li>
+          <li><a href="#" id="botao">calendário</a></li>
           <li><a href="#">grupos</a></li>
           <li><a href="#">eliminatórias</a></li>
           <li><a href="#">convocações</a></li>
         </ul>
       </nav>
+
       <main id="cards"></main>
     </div>
     <script src="main.js"></script>
