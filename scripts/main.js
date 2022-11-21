@@ -23,10 +23,10 @@ function createCard(date, day, games) {
 
 var cardDinamic = function (x) {
   let cardTitulo = x.target
-  let divCard = cardTitulo.nextElementSibling
-  let jogos = cardTitulo.nextElementSibling.children[0].children
-
   if (cardTitulo.tagName === "H2") {
+    let divCard = cardTitulo.nextElementSibling
+    let jogos = cardTitulo.nextElementSibling.children[0].children
+
     if (divCard.getAttribute("name") === "closed") {
       divCard.setAttribute("name", "open")
       divCard.setAttribute(
@@ -48,12 +48,95 @@ var cardDinamic = function (x) {
       )
       divCard.setAttribute("style", "animation: close-card 0.3s forwards;")
       for (var i = 0; i < jogos.length; i++) {
-        jogos[i].setAttribute("style", "display:none")
+        jogos[i].setAttribute(
+          "style",
+          "display:none; color:var(--white-primary);"
+        )
       }
 
       divCard.setAttribute("name", "closed")
     }
   }
+}
+
+function mostrarGrupos() {
+  let painelGrupos = document.getElementById("grupos")
+  let paineis = document.getElementsByTagName("main")
+  for (let i = 0; i < paineis.length; i++) {
+    paineis.item(i).setAttribute("style", "display:none;")
+  }
+  painelGrupos.setAttribute("style", "display:block")
+  let botoes = document.getElementsByClassName("bt-menu")
+  for (let i = 0; i < botoes.length; i++) {
+    botoes[i].setAttribute("style", "color: var(--white-primary)")
+  }
+  let btGrupos = document.getElementById("bt-grupos")
+  btGrupos.setAttribute("style", "color:var(--card-color-primary)")
+}
+
+function mostrarCalendario() {
+  let painelCalendario = document.getElementById("calendario")
+  let paineis = document.getElementsByTagName("main")
+  for (let i = 0; i < paineis.length; i++) {
+    paineis.item(i).setAttribute("style", "display:none")
+  }
+  painelCalendario.setAttribute("style", "display:block")
+  let botoes = document.getElementsByClassName("bt-menu")
+  for (let i = 0; i < botoes.length; i++) {
+    botoes[i].setAttribute("style", "color: var(--white-primary)")
+  }
+  let btCalendario = document.getElementById("bt-calendario")
+  btCalendario.setAttribute("style", "color:var(--card-color-primary)")
+}
+
+function mostrarEliminatorias() {
+  let painelEliminatorias = document.getElementById("eliminatorias")
+  let paineis = document.getElementsByTagName("main")
+  for (let i = 0; i < paineis.length; i++) {
+    paineis.item(i).setAttribute("style", "display:none")
+  }
+  painelEliminatorias.setAttribute("style", "display:block")
+  let botoes = document.getElementsByClassName("bt-menu")
+  for (let i = 0; i < botoes.length; i++) {
+    botoes[i].setAttribute("style", "color: var(--white-primary)")
+  }
+  let btEliminatorias = document.getElementById("bt-eliminatorias")
+  btEliminatorias.setAttribute("style", "color:var(--card-color-primary)")
+}
+
+function mostrarConvocacoes() {
+  let painelConvocacoes = document.getElementById("convocacoes")
+  let paineis = document.getElementsByTagName("main")
+  for (let i = 0; i < paineis.length; i++) {
+    paineis.item(i).setAttribute("style", "display:none")
+  }
+  painelConvocacoes.setAttribute("style", "display:block")
+  let botoes = document.getElementsByClassName("bt-menu")
+  for (let i = 0; i < botoes.length; i++) {
+    botoes[i].setAttribute("style", "color: var(--white-primary)")
+  }
+  let btConvocacoes = document.getElementById("bt-convocacoes")
+  btConvocacoes.setAttribute("style", "color:var(--card-color-primary)")
+}
+
+function createNation(flag, nation) {
+  return `
+    <li style="display:none">
+      <img src="./assets/icon-${flag}.svg" alt="Bandeira do ${flag}" />
+      <strong>${nation}</strong>
+    </li>
+  `
+}
+
+function createGroups(group, nations) {
+  return `
+    <section class="group-container">
+    <h2><span>Grupo</span>${group}</h2>
+    <div class="group" name="closed">
+          <ul>${nations}</ul>
+    </div>
+    </section>
+  `
 }
 
 document.querySelector("#cards").innerHTML =
@@ -155,3 +238,61 @@ document.querySelector("#cards").innerHTML =
   )
 
 document.addEventListener("click", cardDinamic)
+
+document.querySelector("#groups").innerHTML =
+  createGroups(
+    "A",
+    createNation("catar", "Catar") +
+      createNation("equador", "Equador") +
+      createNation("senegal", "Senegal") +
+      createNation("holanda", "Holanda")
+  ) +
+  createGroups(
+    "B",
+    createNation("inglaterra", "Inglaterra") +
+      createNation("irã", "Irã") +
+      createNation("usa", "Estados Unidos") +
+      createNation("gales", "País de Gales")
+  ) +
+  createGroups(
+    "C",
+    createNation("argentina", "Argentina") +
+      createNation("saudita", "Arábia Saudita") +
+      createNation("méxico", "México") +
+      createNation("polônia", "Polônia")
+  ) +
+  createGroups(
+    "D",
+    createNation("frança", "França") +
+      createNation("austrália", "Austrália") +
+      createNation("dinamarca", "Dinamarca") +
+      createNation("tunísia", "Tunísia")
+  ) +
+  createGroups(
+    "E",
+    createNation("espanha", "Espanha") +
+      createNation("costa-rica", "Costa Rica") +
+      createNation("alemanha", "Alemanha") +
+      createNation("japão", "Japão")
+  ) +
+  createGroups(
+    "F",
+    createNation("bélgica", "Bélgica") +
+      createNation("canadá", "Canadá") +
+      createNation("marrocos", "Marrocos") +
+      createNation("croácia", "Croácia")
+  ) +
+  createGroups(
+    "G",
+    createNation("brasil", "Brasil") +
+      createNation("sérvia", "Sérvia") +
+      createNation("suíça", "Suíça") +
+      createNation("camarões", "Camarões")
+  ) +
+  createGroups(
+    "H",
+    createNation("portugal", "Portugal") +
+      createNation("gana", "Gana") +
+      createNation("uruguai", "Uruguai") +
+      createNation("coreia-do-sul", "Coreia do Sul")
+  )

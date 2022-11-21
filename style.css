@@ -40,6 +40,10 @@ header {
   visibility: hidden;
 }
 
+#bt-calendario {
+  color: var(--card-color-primary);
+}
+
 nav {
   margin-bottom: 85px;
 }
@@ -81,6 +85,14 @@ nav ul li:hover {
   flex-wrap: wrap;
 }
 
+#groups {
+  display: flex;
+  justify-content: center;
+  max-width: 1080px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .card {
   padding: 27px 23px 32px 23px;
   text-align: center;
@@ -88,6 +100,7 @@ nav ul li:hover {
   border-top: 2px solid var(--card-color-primary);
   border-bottom: 2px solid var(--card-color-secondary);
   border-radius: 6px;
+  opacity: 0;
 }
 
 section {
@@ -130,7 +143,6 @@ section h2 span {
   display: flex;
   flex-direction: column;
   gap: 24px;
-
   width: 270px;
 }
 
@@ -152,8 +164,54 @@ section h2 span {
   color: var(--white-primary);
 }
 
-.card {
+#grupos {
+  display: none;
+}
+
+.group {
+  padding: 27px 23px 32px 23px;
+  text-align: center;
+  background: #1d1c19;
+  border-top: 2px solid var(--card-color-primary);
+  border-bottom: 2px solid var(--card-color-secondary);
+  border-radius: 6px;
   opacity: 0;
+}
+
+.group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 270px;
+}
+
+.group ul li {
+  display: none;
+  align-items: center;
+  gap: 24px;
+}
+
+.group ul li + li {
+  padding-top: 24px;
+  border-top: 1px solid #323238;
+}
+
+.group ul li strong {
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 125%;
+  color: var(--white-primary);
+}
+
+#eliminatorias {
+  display: none;
+  background-color: blue;
+}
+
+#convocacoes {
+  display: none;
+  background-color: pink;
 }
 
 @keyframes close-card {
@@ -167,7 +225,7 @@ section h2 span {
   }
 }
 
-@media (max-width: 1026px ) {
+@media (max-width: 1026px) {
   section:nth-of-type(3n) {
     margin-right: 32px;
   }

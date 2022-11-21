@@ -25,8 +25,8 @@
     <div id="app">
       <header>
         <img src="./assets/logo.svg" alt="nlw copa calendário" />
-        <a href=""
-          ><span id="sb-button" style="color: #e1e1e6"
+        <a href="" id="sb-button"
+          ><span style="color: #e1e1e6"
             ><i class="fa-solid fa-bars fa-2xl"></i></span
         ></a>
         <nav id="side-bar" hidden></nav>
@@ -34,14 +34,56 @@
 
       <nav id="menu-principal">
         <ul>
-          <li><a href="#" id="botao">calendário</a></li>
-          <li><a href="#">grupos</a></li>
-          <li><a href="#">eliminatórias</a></li>
-          <li><a href="#">convocações</a></li>
+          <li>
+            <a
+              href="#"
+              onclick="mostrarCalendario()"
+              id="bt-calendario"
+              class="bt-menu"
+              >calendário</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="mostrarGrupos()" id="bt-grupos" class="bt-menu"
+              >grupos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="mostrarEliminatorias()"
+              id="bt-eliminatorias"
+              class="bt-menu"
+              >eliminatórias</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="mostrarConvocacoes()"
+              id="bt-convocacoes"
+              class="bt-menu"
+              >convocações</a
+            >
+          </li>
         </ul>
       </nav>
 
-      <main id="cards"></main>
+      <main id="calendario">
+        <div id="cards"></div>
+      </main>
+
+      <main id="grupos">
+        <div id="groups"></div>
+      </main>
+
+      <main id="eliminatorias">
+        <div>sjdiasdja</div>
+      </main>
+
+      <main id="convocacoes">
+        <div>sjdiasdja</div>
+      </main>
     </div>
     <script src="scripts/main.js"></script>
   </body>
