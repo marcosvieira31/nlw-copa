@@ -5,6 +5,7 @@
 }
 
 :root {
+  --background-primary: #202024;
   --card-title-border-color: #746615;
   --card-color-primary: #f7dd43;
   --card-color-secondary: #338af3;
@@ -44,17 +45,65 @@ header {
   color: var(--card-color-primary);
 }
 
-nav {
+#side-bar {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+
+  background-color: var(--background-primary);
+}
+
+#side-bar span {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  text-align: left;
+  cursor: pointer;
+}
+
+#side-bar strong {
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: var(--white-primary);
+  text-transform: uppercase;
+}
+
+#side-bar ul {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 16px;
+}
+
+#side-bar ul li {
+  padding: 14px 85px;
+  border: 2px solid var(--card-color-primary);
+  border-radius: 6px;
+}
+
+#side-bar ul li {
+  margin-bottom: 20px;
+}
+
+#side-bar ul li a {
+  text-decoration: none;
+  color: var(--white-primary);
+  text-transform: uppercase;
+}
+
+#menu-principal {
   margin-bottom: 85px;
 }
 
-nav ul {
+#menu-principal ul {
   display: flex;
   justify-content: center;
   gap: 35px;
 }
 
-nav ul li {
+#menu-principal ul li {
   display: flex;
   list-style: none;
   width: 164px;
@@ -65,7 +114,7 @@ nav ul li {
   transition: 0.3s;
 }
 
-nav ul li a {
+#menu-principal ul li a {
   text-decoration: none;
   color: var(--white-primary);
   padding-block: 14px;
@@ -73,7 +122,7 @@ nav ul li a {
   height: 100%;
 }
 
-nav ul li:hover {
+#menu-principal ul li:hover {
   transform: scale(1.1);
 }
 
@@ -239,6 +288,9 @@ section h2 span {
     margin-bottom: 60px;
   }
 
+  #side-bar {
+  }
+
   #cards {
     justify-content: center;
     max-width: 480px;
@@ -246,6 +298,7 @@ section h2 span {
   #sb-button {
     visibility: visible;
     margin: 0 60px;
+    cursor: pointer;
   }
   #menu-principal {
     display: none;

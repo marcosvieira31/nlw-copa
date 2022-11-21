@@ -25,11 +25,59 @@
     <div id="app">
       <header>
         <img src="./assets/logo.svg" alt="nlw copa calendário" />
-        <a href="" id="sb-button"
-          ><span style="color: #e1e1e6"
-            ><i class="fa-solid fa-bars fa-2xl"></i></span
-        ></a>
-        <nav id="side-bar" hidden></nav>
+
+        <span
+          style="color: #e1e1e6"
+          id="sb-button"
+          onclick="sbAction()"
+          name="closed"
+          ><i class="fa-solid fa-bars fa-2xl"></i
+        ></span>
+
+        <nav id="side-bar">
+          <span style="color: var(--white-primary)" onclick="sbAction()"
+            ><i class="fa-solid fa-arrow-left fa-xl"></i
+          ></span>
+          <strong>menu</strong>
+          <ul>
+            <li>
+              <a
+                href="#"
+                onclick="mostrarCalendario()"
+                id="bt-calendario"
+                class="bt-menu"
+                >calendário</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="mostrarGrupos()"
+                id="bt-grupos"
+                class="bt-menu"
+                >grupos</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="mostrarEliminatorias()"
+                id="bt-eliminatorias"
+                class="bt-menu"
+                >eliminatórias</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="mostrarConvocacoes()"
+                id="bt-convocacoes"
+                class="bt-menu"
+                >convocações</a
+              >
+            </li>
+          </ul>
+        </nav>
       </header>
 
       <nav id="menu-principal">

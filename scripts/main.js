@@ -296,3 +296,16 @@ document.querySelector("#groups").innerHTML =
       createNation("uruguai", "Uruguai") +
       createNation("coreia-do-sul", "Coreia do Sul")
   )
+
+function sbAction() {
+  let sideBar = document.getElementById("side-bar")
+  let sbControl = document.getElementById("sb-button").getAttribute("name")
+  console.log(sbControl)
+  if (sbControl == "closed") {
+    sideBar.setAttribute("style", "display: flex")
+    document.getElementById("sb-button").setAttribute("name", "open")
+  } else {
+    sideBar.setAttribute("style", "display: none")
+    document.getElementById("sb-button").setAttribute("name", "closed")
+  }
+}
