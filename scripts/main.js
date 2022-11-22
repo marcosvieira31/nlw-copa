@@ -1,8 +1,10 @@
-function createGame(player1, hour, player2) {
+function createGame(player1, gols1, hour, gols2, player2) {
   return `
     <li style="display:none">
       <img src="./assets/icon-${player1}.svg" alt="Bandeira do ${player1}" />
+      <h3>${gols1}</h3>
       <strong>${hour}</strong>
+      <h3>${gols2}</h3>
       <img src="./assets/icon-${player2}.svg" alt="Bandeira do ${player2}" />
     </li>
   `
@@ -59,6 +61,8 @@ var cardDinamic = function (x) {
   }
 }
 
+let sideBar = document.getElementById("side-bar")
+
 function mostrarGrupos() {
   let painelGrupos = document.getElementById("grupos")
   let paineis = document.getElementsByTagName("main")
@@ -72,6 +76,9 @@ function mostrarGrupos() {
   }
   let btGrupos = document.getElementById("bt-grupos")
   btGrupos.setAttribute("style", "color:var(--card-color-primary)")
+
+  sideBar.setAttribute("style", "display:none")
+  document.getElementById("sb-button").setAttribute("name", "closed")
 }
 
 function mostrarCalendario() {
@@ -87,6 +94,9 @@ function mostrarCalendario() {
   }
   let btCalendario = document.getElementById("bt-calendario")
   btCalendario.setAttribute("style", "color:var(--card-color-primary)")
+
+  sideBar.setAttribute("style", "display:none")
+  document.getElementById("sb-button").setAttribute("name", "closed")
 }
 
 function mostrarEliminatorias() {
@@ -102,6 +112,9 @@ function mostrarEliminatorias() {
   }
   let btEliminatorias = document.getElementById("bt-eliminatorias")
   btEliminatorias.setAttribute("style", "color:var(--card-color-primary)")
+
+  sideBar.setAttribute("style", "display:none")
+  document.getElementById("sb-button").setAttribute("name", "closed")
 }
 
 function mostrarConvocacoes() {
@@ -117,6 +130,9 @@ function mostrarConvocacoes() {
   }
   let btConvocacoes = document.getElementById("bt-convocacoes")
   btConvocacoes.setAttribute("style", "color:var(--card-color-primary)")
+
+  sideBar.setAttribute("style", "display:none")
+  document.getElementById("sb-button").setAttribute("name", "closed")
 }
 
 function createNation(flag, nation) {
@@ -140,101 +156,105 @@ function createGroups(group, nations) {
 }
 
 document.querySelector("#cards").innerHTML =
-  createCard("20/11", "domingo", createGame("catar", "13:00", "equador")) +
+  createCard(
+    "20/11",
+    "domingo",
+    createGame("catar", "0", "13:00", "2", "equador")
+  ) +
   createCard(
     "21/11",
     "segunda",
-    createGame("inglaterra", "10:00", "irã") +
-      createGame("senegal", "13:00", "holanda") +
-      createGame("usa", "16:00", "gales")
+    createGame("inglaterra", "6", "10:00", "2", "irã") +
+      createGame("senegal", "0", "13:00", "2", "holanda") +
+      createGame("usa", "1", "16:00", "1", "gales")
   ) +
   createCard(
     "22/11",
     "terça",
-    createGame("argentina", "07:00", "saudita") +
-      createGame("dinamarca", "10:00", "tunísia") +
-      createGame("méxico", "13:00", "polônia") +
-      createGame("frança", "16:00", "austrália")
+    createGame("argentina", "-", "07:00", "-", "saudita") +
+      createGame("dinamarca", "-", "10:00", "-", "tunísia") +
+      createGame("méxico", "-", "13:00", "-", "polônia") +
+      createGame("frança", "-", "16:00", "-", "austrália")
   ) +
   createCard(
     "23/11",
     "quarta",
-    createGame("marrocos", "07:00", "croácia") +
-      createGame("alemanha", "10:00", "japão") +
-      createGame("espanha", "13:00", "costa-rica") +
-      createGame("bélgica", "16:00", "canadá")
+    createGame("marrocos", "-", "07:00", "-", "croácia") +
+      createGame("alemanha", "-", "10:00", "-", "japão") +
+      createGame("espanha", "-", "13:00", "-", "costa-rica") +
+      createGame("bélgica", "-", "16:00", "-", "canadá")
   ) +
   createCard(
     "24/11",
     "quinta",
-    createGame("suíça", "07:00", "camarões") +
-      createGame("uruguai", "10:00", "coreia-do-sul") +
-      createGame("portugal", "13:00", "gana") +
-      createGame("brasil", "16:00", "sérvia")
+    createGame("suíça", "-", "07:00", "-", "camarões") +
+      createGame("uruguai", "-", "10:00", "-", "coreia-do-sul") +
+      createGame("portugal", "-", "13:00", "-", "gana") +
+      createGame("brasil", "-", "16:00", "-", "sérvia")
   ) +
   createCard(
     "25/11",
     "sexta",
-    createGame("gales", "07:00", "irã") +
-      createGame("catar", "10:00", "senegal") +
-      createGame("holanda", "13:00", "equador") +
-      createGame("inglaterra", "16:00", "usa")
+    createGame("gales", "-", "07:00", "-", "irã") +
+      createGame("catar", "-", "10:00", "-", "senegal") +
+      createGame("holanda", "-", "13:00", "-", "equador") +
+      createGame("inglaterra", "-", "16:00", "-", "usa")
   ) +
   createCard(
     "26/11",
     "sábado",
-    createGame("tunísia", "07:00", "austrália") +
-      createGame("polônia", "10:00", "saudita") +
-      createGame("frança", "13:00", "dinamarca") +
-      createGame("argentina", "16:00", "méxico")
+    createGame("tunísia", "-", "07:00", "-", "austrália") +
+      createGame("polônia", "-", "10:00", "-", "saudita") +
+      createGame("frança", "-", "13:00", "-", "dinamarca") +
+      createGame("argentina", "-", "16:00", "-", "méxico")
   ) +
   createCard(
     "27/11",
     "domingo",
-    createGame("japão", "07:00", "costa-rica") +
-      createGame("bélgica", "10:00", "marrocos") +
-      createGame("croácia", "13:00", "canadá") +
-      createGame("espanha", "16:00", "alemanha")
+    createGame("japão", "-", "07:00", "-", "costa-rica") +
+      createGame("bélgica", "-", "10:00", "-", "marrocos") +
+      createGame("croácia", "-", "13:00", "-", "canadá") +
+      createGame("espanha", "-", "16:00", "-", "alemanha")
   ) +
   createCard(
     "28/11",
     "segunda",
-    createGame("camarões", "07:00", "sérvia") +
-      createGame("coreia-do-sul", "10:00", "gana") +
-      createGame("brasil", "13:00", "suíça") +
-      createGame("portugal", "16:00", "uruguai")
+    createGame("camarões", "-", "07:00", "-", "sérvia") +
+      createGame("coreia-do-sul", "-", "10:00", "-", "gana") +
+      createGame("brasil", "-", "13:00", "-", "suíça") +
+      createGame("portugal", "-", "16:00", "-", "uruguai")
   ) +
   createCard(
     "29/11",
     "terça",
-    createGame("equador", "07:00", "senegal") +
-      createGame("holanda", "10:00", "catar") +
-      createGame("irã", "13:00", "usa") +
-      createGame("gales", "16:00", "inglaterra")
+    createGame("equador", "-", "07:00", "-", "senegal") +
+      createGame("holanda", "-", "10:00", "-", "catar") +
+      createGame("irã", "-", "13:00", "-", "usa") +
+      createGame("gales", "-", "16:00", "-", "inglaterra")
   ) +
   createCard(
     "30/11",
     "quarta",
-    createGame("tunísia", "07:00", "frança") +
-      createGame("austrália", "10:00", "dinamarca") +
-      createGame("polônia", "13:00", "argentina") +
-      createGame("saudita", "16:00", "méxico")
+    createGame("tunísia", "-", "07:00", "-", "frança") +
+      createGame("austrália", "-", "10:00", "-", "dinamarca") +
+      createGame("polônia", "-", "13:00", "-", "argentina") +
+      createGame("saudita", "-", "16:00", "-", "méxico")
   ) +
   createCard(
     "01/12",
     "quinta",
-    createGame("croácia", "07:00", "bélgica") +
-      createGame("canadá", "10:00", "marrocos") +
-      createGame("japão", "13:00", "espanha") +
-      createGame("costa-rica", "16:00", "alemanha")
+    createGame("croácia", "-", "07:00", "-", "bélgica") +
+      createGame("canadá", "-", "10:00", "-", "marrocos") +
+      createGame("japão", "-", "13:00", "-", "espanha") +
+      createGame("costa-rica", "-", "16:00", "-", "alemanha")
   ) +
   createCard(
     "02/12",
     "sexta",
-    createGame("coreia-do-sul", "07:00", "portugal") +
-      createGame("gana", "10:00", "uruguai") +
-      createGame("sérvia", "13:00", "suíça") +
-      createGame("camarões", "16:00", "brasil")
+    createGame("coreia-do-sul", "-", "07:00", "-", "portugal") +
+      createGame("gana", "-", "10:00", "-", "uruguai") +
+      createGame("sérvia", "-", "13:00", "-", "suíça") +
+      createGame("camarões", "-", "16:00", "-", "brasil")
   )
 
 document.addEventListener("click", cardDinamic)
@@ -298,7 +318,6 @@ document.querySelector("#groups").innerHTML =
   )
 
 function sbAction() {
-  let sideBar = document.getElementById("side-bar")
   let sbControl = document.getElementById("sb-button").getAttribute("name")
   console.log(sbControl)
   if (sbControl == "closed") {
