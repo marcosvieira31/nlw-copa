@@ -38,15 +38,8 @@ header {
   margin-inline: 40px;
 }
 
-header img {
-}
-
 #sb-button {
   visibility: hidden;
-}
-
-#bt-calendario {
-  color: var(--card-color-primary);
 }
 
 #side-bar {
@@ -56,7 +49,7 @@ header img {
   top: 0;
   right: 0;
   z-index: 3;
-  height: 100%;
+  height: 100vh;
 
   background-color: var(--background-primary);
 }
@@ -92,12 +85,6 @@ header img {
   margin-bottom: 20px;
 }
 
-#side-bar ul li a {
-  text-decoration: none;
-  color: var(--white-primary);
-  text-transform: uppercase;
-}
-
 #menu-principal {
   margin-bottom: 85px;
 }
@@ -119,8 +106,9 @@ header img {
   transition: 0.3s;
 }
 
-#menu-principal ul li a {
+nav ul li a {
   text-decoration: none;
+  text-transform: uppercase;
   color: var(--white-primary);
   padding-block: 14px;
   flex-grow: 1;
@@ -129,6 +117,11 @@ header img {
 
 #menu-principal ul li:hover {
   transform: scale(1.1);
+}
+
+#bt-calendario,
+#bts-calendario {
+  color: var(--card-color-primary);
 }
 
 #cards {
@@ -161,6 +154,7 @@ section {
   margin-right: 32px;
   margin-bottom: 32px;
 }
+
 section:nth-of-type(3n) {
   margin-right: 0;
 }
@@ -169,10 +163,9 @@ section h2 {
   padding: 8px 16px;
   border: 2px solid var(--card-color-primary);
   border-radius: 6px;
-
+  margin-inline: auto;
   display: flex;
   width: fit-content;
-  margin-inline: auto;
   gap: 16px;
   justify-content: center;
   align-items: center;
@@ -196,7 +189,7 @@ section h2 span {
 .card ul {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   width: 270px;
 }
 
@@ -225,7 +218,6 @@ section h2 span {
   font-weight: 700;
   font-size: 36px;
   line-height: 125%;
-  text-decoration: underline;
   color: var(--white-primary);
 }
 
@@ -271,12 +263,23 @@ section h2 span {
 
 #eliminatorias {
   display: none;
-  background-color: blue;
+  text-align: center;
+}
+
+#eliminatorias div h2,
+#convocacoes h2 {
+  color: var(--white-primary);
+  text-align: center;
+}
+
+#eliminatorias div,
+#convocacoes div {
+  width: 100%;
 }
 
 #convocacoes {
   display: none;
-  background-color: pink;
+  text-align: center;
 }
 
 @keyframes close-card {
